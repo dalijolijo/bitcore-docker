@@ -9,14 +9,11 @@ RUN apt-get update && apt-get install -y \
   make \
   python
 
-RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.1/dumb-init_1.2.1_amd64.deb
-RUN dpkg -i dumb-init_*.deb
-
 EXPOSE 3001 8333
 HEALTHCHECK --interval=5s --timeout=5s --retries=10 CMD curl -f http://localhost:3001/insight/
 
 WORKDIR /root
-COPY bitcore .
+COPY bitcore ./
 RUN npm config set package-lock false && npm install --production
 
 RUN apt-get purge -y \
@@ -36,6 +33,6 @@ RUN rm -rf \
   /var/lib/apt/lists/*
 
 ENV BITCOIN_NETWORK livenet
-ENTRYPOINT ["/usr/bin/dumb-init", "--", "./starter.sh"]
+ENTRYPOINT ["./starter.sh"]
 
 VOLUME /root/bitcoin/data

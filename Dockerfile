@@ -1,5 +1,5 @@
 
-FROM node:4.4.7-slim
+FROM node:carbon
 
 RUN apt-get update && apt-get install -y \
   g++ \

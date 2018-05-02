@@ -32,7 +32,6 @@ RUN rm -rf \
   /tmp/* \
   /var/lib/apt/lists/*
 
-ENV BITCOIN_NETWORK livenet
-ENTRYPOINT ["starter.sh"]
-
 VOLUME /root/bitcoin/data
+ENV BITCOIN_NETWORK livenet
+ENTRYPOINT ["./starter.sh"]

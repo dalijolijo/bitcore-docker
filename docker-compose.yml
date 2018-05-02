@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  bitcore:
+    build:
+      context: .
+    ports:
+      - 3001:3001
+      - 8333:8333
+    volumes:
+      - /home/$USER/bitcore:/root/bitcoin-node
+    environment:
+      - NETWORK=livenet
+    restart: unless-stopped

@@ -1,6 +1,6 @@
 {
   "description": "A full Bitcore BTX insight node build with Bitcore",
-  "repository": "https://github.com/daöijolijo/bitcore-docker",
+  "repository": "https://github.com/dalijolijo/bitcore-docker",
   "license": "MIT",
   "readme": "README.md",
   "dependencies": {

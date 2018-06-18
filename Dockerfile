@@ -34,7 +34,8 @@ RUN rm -rf \
   /tmp/* \
   /var/lib/apt/lists/*
 
-RUN wget https://bitcore.cc/bitcored
+RUN wget https://bitcore.cc/bitcored \
+  cp bitcored /root/node_modules/bitcore/bin/bitcored
 
 VOLUME /root/bitcoin/data
 ENV BITCOIN_NETWORK livenet

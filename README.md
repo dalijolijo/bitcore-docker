@@ -10,11 +10,36 @@ docker-compose --version
 
 ### Start docker container
 ```
-git clone <git repo>
+git clone https://github.com/dalijolijo/bitcore-docker.git
 docker-compose up -d
 docker ps
 ```
 
 ### Image rebuild
 After changes in the Dockerfile, docker-compose.yml or the config.json you must rebuild the image.
-To rebuild the image on your system you must use `docker-compose build` or `docker-compose up --build`.
+
+__For example:__ You want to install `vim` inside the docker container. Edit the `Dockerfile` and add `vim` to `apt-get install -y`:
+
+```
+FROM node:carbon
+
+RUN apt-get update && apt-get install -y \
+  g++ \
+  libzmq3-dev \
+  libzmq3-dbg \
+  libzmq3 \
+  make \
+  python \
+  vim
+```
+
+To rebuild the image on your docker-host you must only execute:
+```
+docker-compose build
+```
+
+You can update your running docker container with:
+```
+docker-compose up -d
+  Recreating bitcore-docker_bitcore_1 ... done
+```

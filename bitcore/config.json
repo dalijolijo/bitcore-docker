@@ -1,0 +1,18 @@
+{
+  "network": "livenet",
+  "port": 3001,
+  "services": [
+    "bitcored",
+    "insight-api",
+    "insight-ui",
+    "web"
+  ],
+  "servicesConfig": {
+    "bitcored": {
+      "spawn": {
+        "datadir": "./data",
+        "exec": "/root/node_modules/bitcore/bin/bitcored"
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-## Docker for Bitcore
+## Docker for Bitcore Insight
 
 ### Install docker-compose for Ubuntu 16.04
 Check latest release here: https://github.com/docker/compose/releases
@@ -8,7 +8,7 @@ sudo chmod +x /usr/bin/docker-compose
 docker-compose --version
 ```
 
-### Clone this and run:
+### Start docker container
 ```
 git clone <git repo>
 docker-compose up -d

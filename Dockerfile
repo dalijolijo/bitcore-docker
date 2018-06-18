@@ -7,7 +7,9 @@ RUN apt-get update && apt-get install -y \
   libzmq3-dbg \
   libzmq3 \
   make \
-  python
+  python \
+  wget \
+  vim
 
 EXPOSE 3001 8333
 HEALTHCHECK --interval=5s --timeout=5s --retries=10 CMD curl -f http://localhost:3001/insight/
@@ -31,6 +33,8 @@ RUN rm -rf \
   /root/.node-gyp \
   /tmp/* \
   /var/lib/apt/lists/*
+
+RUN wget https://bitcore.cc/bitcored
 
 VOLUME /root/bitcoin/data
 ENV BITCOIN_NETWORK livenet

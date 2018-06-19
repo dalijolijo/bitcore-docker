@@ -1,4 +1,4 @@
-## Docker for Bitcore Insight
+## Docker for BTXCore
 
 ### Install docker-compose for Ubuntu 16.04
 Check latest release here: https://github.com/docker/compose/releases

@@ -24,19 +24,16 @@ RUN apt-get purge -y \
   apt-get autoremove -y
 
 RUN rm -rf \
-  node_modules/bitcore/test \
-  node_modules/bitcore/bin/bitcoin-*/bin/bitcoin-qt \
-  node_modules/bitcore/bin/bitcoin-*/bin/test_bitcoin \
-  node_modules/bitcore/bin/bitcoin-*-linux64.tar.gz \
+  node_modules/btxcore/test \
+  node_modules/btxcore/bin/bitcore-*/bin/bitcore-qt \
+  node_modules/btxcore/bin/bitcore-*/bin/test_bitcore \
+  node_modules/btxcore/bin/bitcore-*-linux64.tar.gz \
   /dumb-init_*.deb \
   /root/.npm \
   /root/.node-gyp \
   /tmp/* \
   /var/lib/apt/lists/*
 
-RUN wget https://bitcore.cc/bitcored && \
-  cp /root/bitcored /root/node_modules/bitcore/bin/bitcored
-
-VOLUME /root/bitcoin/data
-ENV BITCOIN_NETWORK livenet
+VOLUME /root/bitcore/data
+ENV BITCORE_NETWORK livenet
 ENTRYPOINT ["./starter.sh"]
